@@ -1,0 +1,11 @@
+## Interface: 80300
+## Title: Lib: LibAddonGUI
+## Author: Nikketa-Hyjal-US
+## Notes: Library for GUI creation.
+## Version: @project-version@
+## X-Category: Library
+## X-Curse-Project-ID: 407139
+
+## Dependencies: LibAddonUtils
+
+LibAddonGUI.xml
