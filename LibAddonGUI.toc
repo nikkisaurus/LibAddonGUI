@@ -5,6 +5,7 @@
 ## Version: @project-version@
 ## X-Category: Library
 ## X-Curse-Project-ID: 407139
+## X-WoWI-ID: 25668
 
 ## Dependencies: LibAddonUtils
 
