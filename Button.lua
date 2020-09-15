@@ -77,17 +77,17 @@ function LibAddonGUI:CreateCheckButton(parent, flags)
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-    if flags.onShow then
-        checkbox:SetScript("OnShow", function(self)
+    checkbox:SetScript("OnShow", function(self)
+        if flags.onShow then
             flags.onShow(self)
-        end)
-    end
+        end
+    end)
 
-    if flags.onClick then
-        checkbox:SetScript("OnClick", function(self)
+    checkbox:SetScript("OnClick", function(self)
+        if flags.onClick then
             flags.onClick(self)
-        end)
-    end
+        end
+    end)
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
