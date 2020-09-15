@@ -38,7 +38,7 @@ function LibAddonGUI:CreateFrame(parent, flags)
     if flags.title then
         frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
         frame.title:SetText(flags.title)
-        frame.title:SetPoint("TOP", 0, -5)
+        frame.title:SetPoint("TOP", 0, -8)
     end
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
