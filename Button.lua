@@ -61,6 +61,45 @@ end
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
+function LibAddonGUI:CreateCheckButton(parent, flags)
+    --[[ flags
+        name: str, frame name
+        onShow: func, called when checkbox is shown (e.g. to set SetChecked to a DB value)
+        onClick: func, called when checkbox is clicked
+        label: str, checkbox label
+    ]]
+
+    local checkbox = CreateFrame("CheckButton", flags.name, parent, "OptionsBaseCheckButtonTemplate")
+
+    if not flags.ignoreSkin then
+        tinsert(self.elements.CheckBox, checkbox)
+    end
+
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+    if flags.onShow then
+        checkbox:SetScript("OnShow", function(self)
+            flags.onShow(self)
+        end)
+    end
+
+    if flags.onClick then
+        checkbox:SetScript("OnClick", function(self)
+            flags.onClick(self)
+        end)
+    end
+
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+    local label = checkbox:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    label:SetPoint("LEFT", checkbox, "RIGHT", 5, 1)
+    label:SetText(flags.label)
+
+    return checkbox, label
+end
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
 function LibAddonGUI:CreateIcon(parent, flags)
     --[[ flags
         -- see CreateButton flags

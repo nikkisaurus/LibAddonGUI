@@ -19,6 +19,7 @@ function lib:RegisterAddon(addonName)
         elements = {
             Frame = {},
             Button = {},
+            CheckBox = {},
             ScrollBar = {},
             CloseButton = {},
             EditBox = {},
